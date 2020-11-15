@@ -117,7 +117,7 @@ namespace Lithomancer.MapGeneration.Viewer
 
 					gfx.FillRectangle(brush, i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE);
 
-					gfx.FillRectangle(new SolidBrush(Color.FromArgb(255 * map.GetOre(0)[i, j] / 2, 132, 55, 171)), i * TILE_SIZE + 1, j * TILE_SIZE + 1, 3, 3);
+					gfx.FillRectangle(new SolidBrush(Color.FromArgb(255 * map.Ores[0][i, j] / 2, 132, 55, 171)), i * TILE_SIZE + 1, j * TILE_SIZE + 1, 3, 3);
 				}
 			}
 

@@ -2,6 +2,7 @@
 
 namespace Lithomancer.MapGeneration.CellularAutomata
 {
+	[Serializable]
 	public class RuleSet
 	{
 		private readonly Func<CellRegion, int, bool> rule;

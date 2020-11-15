@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Lithomancer.MapGeneration.Maps
 {
+	[Serializable]
 	public class Segment
 	{
 		public Segment(int x, int y, IEnumerable<Pixel> pixels) : this((x, y), pixels) { }

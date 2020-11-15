@@ -1,5 +1,8 @@
-﻿namespace Lithomancer.MapGeneration.Maps
+﻿using System;
+
+namespace Lithomancer.MapGeneration.Maps
 {
+	[Serializable]
 	public struct CaveProperties
 	{
 		public (int X, int Y) Size { get; set; }

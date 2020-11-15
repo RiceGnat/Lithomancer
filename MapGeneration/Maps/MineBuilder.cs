@@ -52,7 +52,7 @@ namespace Lithomancer.MapGeneration.Maps
 
 		private bool IsValid(Mine output) =>
 			output.MainRegion.Area >= minimumArea ||
-			output.DoorCount == mineProperties.DoorCount;
+			output.Doors.Count == mineProperties.DoorCount;
 
 		public Mine Generate(int seed) => new Mine(seed, caveProperties, mineProperties, oreParameters);
 

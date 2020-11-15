@@ -1,5 +1,8 @@
-﻿namespace Lithomancer.MapGeneration.Maps
+﻿using System;
+
+namespace Lithomancer.MapGeneration.Maps
 {
+	[Serializable]
 	public class HeightMap : IHeightMap
 	{
 		private readonly int[,] values;

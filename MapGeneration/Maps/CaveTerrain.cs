@@ -6,6 +6,7 @@ using Lithomancer.MapGeneration.Noise;
 
 namespace Lithomancer.MapGeneration.Maps
 {
+	[Serializable]
 	public class CaveTerrain : ICaveTerrain
 	{
 		private readonly IHeightMap map;

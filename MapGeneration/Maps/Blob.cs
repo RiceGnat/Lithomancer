@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Lithomancer.MapGeneration.Maps
 {
+	[Serializable]
 	public class Blob
 	{
 		public Blob(int label, int area, IEnumerable<Pixel> pixels, int edgeLength, IEnumerable<Pixel> edge, int borderLength, IEnumerable<Pixel> border)

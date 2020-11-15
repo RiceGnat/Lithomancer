@@ -5,6 +5,7 @@ using Lithomancer.MapGeneration.CellularAutomata;
 
 namespace Lithomancer.MapGeneration.Maps
 {
+	[Serializable]
 	public class Mine : IMine
 	{
 		private readonly CaveTerrain cave;
@@ -20,15 +21,13 @@ namespace Lithomancer.MapGeneration.Maps
 
 			cave = new CaveTerrain(random.Next(), caveProperties);
 
-			IList<Segment> doors = SelectDoors(random.Next(), mineProperties.DoorCount, mineProperties.DoorSize, mineProperties.DoorDistance, MainRegion.Border);
-			Doors = doors;
-			DoorCount = doors.Count;
+			Doors = SelectDoors(random.Next(), mineProperties.DoorCount, mineProperties.DoorSize, mineProperties.DoorDistance, MainRegion.Border);
 
 			IHeightMap rocks = GenerateRocks(random.Next(), x, y, mineProperties.RockDensity);
 			int height = rocks.MaxHeight + 1;
 			Terrain = new HeightMap(height, ValueArray.Create(x, y, (i, j) => {
 				if (cave[i, j] > 0) return height;
-				else if (doors.Count > 0 && doors[0].Center.DistanceTo((i, j)) <= mineProperties.ClearEntranceRadius) return 0;
+				else if (Doors.Count > 0 && Doors[0].Center.DistanceTo((i, j)) <= mineProperties.ClearEntranceRadius) return 0;
 				else return rocks[i, j];
 			}));
 
@@ -36,6 +35,8 @@ namespace Lithomancer.MapGeneration.Maps
 			{
 				this.ores.Add(GenerateOre(random.Next(), x, y, p.Density, p.Rate, p.Layers, Terrain));
 			}
+
+			Ores = this.ores.AsReadOnly();
 		}
 
 		public int Seed { get; }
@@ -43,16 +44,13 @@ namespace Lithomancer.MapGeneration.Maps
 		public IHeightMap Terrain { get; }
 		public Blob MainRegion => cave.MainRegion;
 		public IEnumerable<Blob> Regions => cave.Regions;
-		public IEnumerable<Segment> Doors { get; }
-		public int DoorCount { get; }
-		public int OreTypeCount => ores.Count;
+		public IReadOnlyList<Segment> Doors { get; }
+		public IReadOnlyList<IHeightMap> Ores { get; }
 
 		int IHeightMap.this[int x, int y] => Terrain[x, y];
 		int IHeightMap.MaxHeight => Terrain.MaxHeight;
 
-		public IHeightMap GetOre(int index) => index < OreTypeCount ? ores[index] : null;
-
-		private static IList<Segment> SelectDoors(int seed, int count, int size, int distance, IEnumerable<Pixel> border)
+		private static IReadOnlyList<Segment> SelectDoors(int seed, int count, int size, int distance, IEnumerable<Pixel> border)
 		{
 			Random random = new Random(seed);
 			HashSet<Pixel> pixels = new HashSet<Pixel>(border);

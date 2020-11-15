@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BE04789-90C9-4F72-87EC-D95EC69F8F0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lithomancer.Core</RootNamespace>
+    <AssemblyName>Lithomancer.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component.cs" />
+    <Compile Include="Components\ComponentDecorator.cs" />
+    <Compile Include="Components\ModifierListComponent%28T%29.cs" />
+    <Compile Include="Components\IStats.cs" />
+    <Compile Include="Components\IEditableStats.cs" />
+    <Compile Include="Components\Stats.cs" />
+    <Compile Include="Components\StatsComponent.cs" />
+    <Compile Include="Entities\Equipment.cs" />
+    <Compile Include="Entities\EquipmentTypes.cs" />
+    <Compile Include="Entities\IEquipment.cs" />
+    <Compile Include="Entities\IUnit.cs" />
+    <Compile Include="Entities\Unit.cs" />
+    <Compile Include="Entities\UnitComponents.cs" />
+    <Compile Include="Entities\UnitModifier.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="IComponent.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IModifiable.cs" />
+    <Compile Include="ModifiableEntity.cs" />
+    <Compile Include="IModifier.cs" />
+    <Compile Include="Modifier.cs" />
+    <Compile Include="ModifierList.cs" />
+    <Compile Include="Components\StatsModifier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

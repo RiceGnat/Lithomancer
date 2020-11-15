@@ -1,5 +1,8 @@
-﻿namespace Lithomancer.MapGeneration.Maps
+﻿using System;
+
+namespace Lithomancer.MapGeneration.Maps
 {
+	[Serializable]
 	public struct Pixel
 	{
 		public Pixel(int x, int y, int label)
