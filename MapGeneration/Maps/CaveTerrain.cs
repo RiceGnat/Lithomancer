@@ -11,25 +11,25 @@ namespace Lithomancer.MapGeneration.Maps
 	{
 		private readonly IHeightMap map;
 
-		public CaveTerrain(int seed, CaveProperties properties)
+		public CaveTerrain(int seed, CaveParameters parameters)
 		{
 			Random random = new Random(seed);
 			Seed = seed;
 
-			int x = properties.Size.X;
-			int y = properties.Size.Y;
+			int x = parameters.Size.X;
+			int y = parameters.Size.Y;
 
 			bool[,] bounds = GenerateBounds(random.Next(), x, y, 5, -1);
-			bool[,] walls = GenerateWalls(random.Next(), x, y, properties.WallDensity);
+			bool[,] walls = GenerateWalls(random.Next(), x, y, parameters.WallDensity);
 			bool[,] map = ValueArray.Create(x, y, (i, j) => bounds[i, j] || walls[i, j]);
 
 			Regions = GetAreas(map);
 			MainRegion = Regions.First();
 
-			if (properties.FillHoles)
+			if (parameters.FillHoles)
 			{
 				map = FillHoles(map, Regions.Skip(1));
-				Regions = Regions.Take(1);
+				Regions = Regions.Take(1).ToList().AsReadOnly();
 			}
 
 			this.map = new BooleanMap(map);

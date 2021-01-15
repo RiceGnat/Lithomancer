@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lithomancer.MapGeneration", "MapGeneration\Lithomancer.MapGeneration.csproj", "{F949F46A-BD2F-4551-9D73-0630678EEBA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapGeneration", "MapGeneration\MapGeneration.csproj", "{F949F46A-BD2F-4551-9D73-0630678EEBA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lithomancer.MapGeneration.Viewer", "MapGeneration.Viewer\Lithomancer.MapGeneration.Viewer.csproj", "{1E527AC7-C44F-4B87-B2D1-1FFFC64E6B0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapGeneration.Viewer", "MapGeneration.Viewer\MapGeneration.Viewer.csproj", "{1E527AC7-C44F-4B87-B2D1-1FFFC64E6B0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DD928144-094F-44D9-AB45-5B80CBC5D642}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,9 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lithomancer.Core", "Lithomancer.Core\Lithomancer.Core.csproj", "{7BE04789-90C9-4F72-87EC-D95EC69F8F0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{7BE04789-90C9-4F72-87EC-D95EC69F8F0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lithomancer.Core.UnitTests", "Lithomancer.Core.UnitTests\Lithomancer.Core.UnitTests.csproj", "{FC068B14-B916-42D2-98AF-15C03EB66B50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.UnitTests", "Core.UnitTests\Core.UnitTests.csproj", "{FC068B14-B916-42D2-98AF-15C03EB66B50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapGeneration.UnitTests", "MapGeneration.UnitTests\MapGeneration.UnitTests.csproj", "{9E974F46-2CE2-47C5-A672-3EED6E08007F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,7 +32,6 @@ Global
 		{1E527AC7-C44F-4B87-B2D1-1FFFC64E6B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E527AC7-C44F-4B87-B2D1-1FFFC64E6B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E527AC7-C44F-4B87-B2D1-1FFFC64E6B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E527AC7-C44F-4B87-B2D1-1FFFC64E6B0F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7BE04789-90C9-4F72-87EC-D95EC69F8F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7BE04789-90C9-4F72-87EC-D95EC69F8F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BE04789-90C9-4F72-87EC-D95EC69F8F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,7 +39,10 @@ Global
 		{FC068B14-B916-42D2-98AF-15C03EB66B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC068B14-B916-42D2-98AF-15C03EB66B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC068B14-B916-42D2-98AF-15C03EB66B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC068B14-B916-42D2-98AF-15C03EB66B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E974F46-2CE2-47C5-A672-3EED6E08007F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E974F46-2CE2-47C5-A672-3EED6E08007F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E974F46-2CE2-47C5-A672-3EED6E08007F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E974F46-2CE2-47C5-A672-3EED6E08007F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

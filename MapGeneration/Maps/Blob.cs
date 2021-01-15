@@ -11,11 +11,11 @@ namespace Lithomancer.MapGeneration.Maps
 		{
 			Label = label;
 			Area = area;
-			Pixels = pixels?.ToList().AsReadOnly() ?? throw new ArgumentNullException(nameof(pixels));
+			Pixels = pixels?.ToList().AsReadOnly();
 			EdgeLength = edgeLength;
-			Edge = edge?.ToList().AsReadOnly() ?? throw new ArgumentNullException(nameof(edge));
+			Edge = edge?.ToList().AsReadOnly();
 			BorderLength = borderLength;
-			Border = border?.ToList().AsReadOnly() ?? throw new ArgumentNullException(nameof(border));
+			Border = border?.ToList().AsReadOnly();
 		}
 
 		public int Label { get; }

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BE04789-90C9-4F72-87EC-D95EC69F8F0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lithomancer.Core</RootNamespace>
+    <AssemblyName>Lithomancer.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component%28T%29.cs" />
+    <Compile Include="Component.cs" />
+    <Compile Include="Components\Element.cs" />
+    <Compile Include="Components\EquipmentProperties.cs" />
+    <Compile Include="Components\IUnitState.cs" />
+    <Compile Include="Components\IVolatileStats.cs" />
+    <Compile Include="Components\GemProperties.cs" />
+    <Compile Include="Components\StatValuePair.cs" />
+    <Compile Include="Components\UnitState.cs" />
+    <Compile Include="Components\VolatileStats.cs" />
+    <Compile Include="Components\OreStat.cs" />
+    <Compile Include="Components\UnitBaseStat.cs" />
+    <Compile Include="Components\EquipmentComponent.cs" />
+    <Compile Include="Components\IItemProperties.cs" />
+    <Compile Include="Components\ItemComponent.cs" />
+    <Compile Include="Components\ModifierList%28T%29.cs" />
+    <Compile Include="Components\IStats.cs" />
+    <Compile Include="Components\IEditableStats.cs" />
+    <Compile Include="Components\UnitStat.cs" />
+    <Compile Include="Components\StatsMap.cs" />
+    <Compile Include="Components\UnitStatsResolver.cs" />
+    <Compile Include="Entities\Equipment.cs" />
+    <Compile Include="Components\EquipmentType.cs" />
+    <Compile Include="Entities\Gemstone.cs" />
+    <Compile Include="Entities\IEquipment.cs" />
+    <Compile Include="Entities\IGemstone.cs" />
+    <Compile Include="Entities\IItem.cs" />
+    <Compile Include="Entities\IItem%28T%29.cs" />
+    <Compile Include="Entities\IOre.cs" />
+    <Compile Include="Entities\Item%28T%29.cs" />
+    <Compile Include="Components\ItemType.cs" />
+    <Compile Include="Entities\IUnit.cs" />
+    <Compile Include="Entities\Ore.cs" />
+    <Compile Include="Entities\SocketableEquipment.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="IComponent%28T%29.cs" />
+    <Compile Include="Systems\Damage.cs" />
+    <Compile Include="Systems\DamageCalculator.cs" />
+    <Compile Include="Systems\IDamageCalculator.cs" />
+    <Compile Include="Systems\IWorld.cs" />
+    <Compile Include="Systems\IWorldFloor.cs" />
+    <Compile Include="Systems\WorldFloorInstance.cs" />
+    <Compile Include="Systems\IWorldGenerator.cs" />
+    <Compile Include="Components\OreProperties.cs" />
+    <Compile Include="Components\OreCategory.cs" />
+    <Compile Include="Entities\Unit.cs" />
+    <Compile Include="Components\UnitComponent.cs" />
+    <Compile Include="Components\UnitModifier.cs" />
+    <Compile Include="Systems\WorldFloorParameters.cs" />
+    <Compile Include="Systems\WorldInstance.cs" />
+    <Compile Include="Systems\WorldOreParameters.cs" />
+    <Compile Include="Systems\WorldTemplate.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="IComponent.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IModifiable.cs" />
+    <Compile Include="Entities\ModifiableEntity.cs" />
+    <Compile Include="IModifier.cs" />
+    <Compile Include="Modifier.cs" />
+    <Compile Include="Components\ModifierList.cs" />
+    <Compile Include="Components\StatsModifier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MapGeneration\MapGeneration.csproj">
+      <Project>{F949F46A-BD2F-4551-9D73-0630678EEBA9}</Project>
+      <Name>MapGeneration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

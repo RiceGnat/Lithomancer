@@ -4,7 +4,7 @@ namespace Lithomancer.MapGeneration
 {
 	public static class Extensions
 	{
-		public static bool CheckBounds(this bool[,] array, int x, int y) =>
+		public static bool CheckBounds(this Array array, int x, int y) =>
 			!(x < array.GetLowerBound(0) || x > array.GetUpperBound(0) ||
 			y < array.GetLowerBound(1) || y > array.GetUpperBound(1));
 

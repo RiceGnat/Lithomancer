@@ -14,7 +14,7 @@ namespace Lithomancer.MapGeneration.Viewer
 
 		Random random = new Random();
 		MineBuilder factory;
-		Mine map;
+		MineMap map;
 
 		public MapView()
 		{
@@ -67,7 +67,7 @@ namespace Lithomancer.MapGeneration.Viewer
 			factory = new MineBuilder(seed)
 				.Size(MAP_SIZE, MAP_SIZE)
 				.FillHoles()
-				.MinimumMainArea(MAP_SIZE * MAP_SIZE / 4)
+				.MinimumMainArea((int)(MAP_SIZE * MAP_SIZE * 0.25))
 				.SelectDoors(2, 3, 40)
 				.EntraceRadius(3)
 				.AddOre(0.2, 0.7, 2);
